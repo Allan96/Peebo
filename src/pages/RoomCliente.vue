@@ -79,7 +79,7 @@
                           </b>
                       </legend>
                       <p>
-                          Invalidez por acidente
+                          {{ produto2 }}
                       </p>
                       <legend>
                        O benefício pode ser solicitado a partir
@@ -93,8 +93,8 @@ da ocorrência de um sinistro, que se caracteriza pelo acontecimento do evento p
                             MONGERAL AEGON
                           </b>
                       </legend>
-                      <p>
-                          A Previdência Private Top
+                      <p> 
+                          {{ produto1 }}
                       </p>
                       <legend>
                          Para quem quer investir com segurança e tem foco no rendimento da sua reserva financeira, o Private Top é uma boa opção. Com uma das menores taxas de administração do mercado (0,7%) e sem taxa de carregamento na entrada, este plano de previdência foi criado para atender a grandes investidores.
@@ -121,8 +121,9 @@ da ocorrência de um sinistro, que se caracteriza pelo acontecimento do evento p
         data() {
             return {
                 url: Cookies.get('url'),
-                msg: '',
-                messages: []
+                produto1: '',
+                produto2: '',
+                produto3: '',
             }
         },
         created: function() {
@@ -139,6 +140,24 @@ da ocorrência de um sinistro, que se caracteriza pelo acontecimento do evento p
                   router.push('/perfil/corretor');
             },
              ofertas: function() {
+
+  this.$http.get('https://gateway.gr1d.io/sandbox/mongeralaegon/v1/modeloproposta?cnpj=11321351000110&completo=true&canalVenda=4', {
+                headers: {
+                    'X-Api-Key': '1e0d86b2-d0b2-4ddb-96b4-cdc907f7e5a8',
+                    'Accept': 'application/json'
+                    }
+                })
+                .then(res => {
+                    const body = res.body;
+                    this.produto1 = body.Valor[0].produtos[6].descricao;
+                    this.produto2 = body.Valor[0].produtos[0].descricao;
+                    this.produto3 = body.Valor[0].produtos[2].descricao;
+                    console.log(body);
+
+                })
+                .catch((error) => console.log(error));
+
+                    //MOSTRA OFERTAS
                     document.getElementById("step-2").style.display = "none";
                     document.getElementById("ofertas").style.display = "flex";
             },
@@ -161,6 +180,7 @@ da ocorrência de um sinistro, que se caracteriza pelo acontecimento do evento p
 
 <style scoped lang="scss">
     body {
+        font-family: Source Sans Pro;
         margin: 0;
         font-size: 16px;
     }
@@ -251,6 +271,11 @@ da ocorrência de um sinistro, que se caracteriza pelo acontecimento do evento p
         overflow-y: auto;
         .card-fim{
             height: auto;
+            p{
+                margin-top: 16px;
+                font-size: 16px;
+                text-transform: uppercase;
+            }
         }
     }
     #perguntas {

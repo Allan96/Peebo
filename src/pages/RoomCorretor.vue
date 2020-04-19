@@ -38,7 +38,6 @@ iframe{
     border: 0px!important;
     display: block!important;
 }
-
 img{
     position: fixed;
     z-index: 999;
