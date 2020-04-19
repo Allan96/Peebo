@@ -1,8 +1,7 @@
 <template>
   <div>
-      <div id="teste"></div>
-      <!-- {{ url }} -->
-  <button type="button" @click="sair">Sair da Live</button>
+      <img src="../assets/ficha.png" alt="">
+      <iframe :src="url" frameborder="0"></iframe>
   </div>
 
 </template>
@@ -21,10 +20,6 @@ export default {
             callFrame.join({ url: this.url });
     },
      methods: {
-         sair: function(){
-             callFrame.leave();
-             alert('você saiu');
-         }
     }
 }
 </script>
@@ -35,13 +30,20 @@ body{
 }
 iframe{
     width: 100%!important;
-    height: calc(100vh - 300px)!important;
+    height: 100vh!important;
     position: relative!important;
     right: auto!important;
     bottom: auto!important;
     margin: 0px!important;
     border: 0px!important;
     display: block!important;
+}
+
+img{
+    position: fixed;
+    z-index: 999;
+    left: 50px;
+    top: 200px;
 }
 
 </style>
