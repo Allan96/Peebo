@@ -1,7 +1,7 @@
 <template>
   <div>
       <img src="../assets/ficha.png" alt="">
-      <iframe :src="url" frameborder="0" allow="microphone; camera; autoplay"></iframe>
+      <iframe id="teste" :src="url" frameborder="0" allow="microphone; camera; autoplay"></iframe>
   </div>
 
 </template>
@@ -9,7 +9,7 @@
 <script>
 import DailyIframe from '@daily-co/daily-js';
 import Cookies from 'js-cookie';
-const callFrame = DailyIframe;
+const callFrame = DailyIframe.createFrame(document.getElementById('teste'));
 export default {
     data() {
         return{
@@ -18,6 +18,10 @@ export default {
     },
     created: function() {
             callFrame.join({ url: this.url });
+            callFrame.updateParticipant('local', {
+                setAudio: true,
+                setVideo: true
+            });
     },
      methods: {
     }
