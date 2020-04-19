@@ -2,7 +2,7 @@
   <div>
       <div id="teste"></div>
       <!-- {{ url }} -->
-  <button type="button" @click="sair">Sair da Live</button>
+  <!-- <button type="button" @click="sair">Sair da Live</button> -->
   </div>
 
 </template>
@@ -19,16 +19,7 @@ export default {
     },
     created: function() {
             callFrame.join({ url: this.url });
-            callFrame.updateParticipant('local', { styles: {
-    cam: {
-      video: {
-        visibility: 'hidden',
-        top: 0,
-        width: 0,
-        height: 0
-      }
-    }
-  },setAudio: false,setVideo: false});
+            callFrame.updateParticipant('local', {setAudio: false,setVideo: false});
     },
      methods: {
          sair: function(){
