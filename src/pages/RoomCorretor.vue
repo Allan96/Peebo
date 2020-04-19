@@ -9,8 +9,8 @@
 
 <script>
 import DailyIframe from '@daily-co/daily-js';
-const callFrame = DailyIframe.createFrame(document.getElementById('teste'));
 import Cookies from 'js-cookie';
+const callFrame = DailyIframe;
 export default {
     data() {
         return{
@@ -23,14 +23,13 @@ export default {
      methods: {
          sair: function(){
              callFrame.leave();
-            // console.log(callFrame.participants());
              alert('você saiu');
          }
     }
 }
 </script>
 
-<style>
+<style scoped>
 body{
     margin: 0;
 }
