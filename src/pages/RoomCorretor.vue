@@ -1,7 +1,7 @@
 <template>
   <div>
       <img src="../assets/ficha.png" alt="">
-      <iframe :src="url" frameborder="0"></iframe>
+      <iframe :src="url" frameborder="0" allow="microphone; camera; autoplay"></iframe>
   </div>
 
 </template>

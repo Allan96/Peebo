@@ -189,7 +189,7 @@ iframe{
         background: #0C0C0C;
         padding: 40px;
         input{
-            font-family: Source Serif Pro;
+            font-family: 'Source Serif Pro', serif;
             background: transparent;
             color: white;
             border: 0;

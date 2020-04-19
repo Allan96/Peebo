@@ -82,8 +82,7 @@
                           {{ produto2 }}
                       </p>
                       <legend>
-                       O benefício pode ser solicitado a partir
-da ocorrência de um sinistro, que se caracteriza pelo acontecimento do evento previsto e coberto pelo seguro, como um acidente, invalidez, doença grave, afastamento do trabalho, entre outros.
+                       O benefício pode ser solicitado a partir da ocorrência de um sinistro, que se caracteriza pelo acontecimento do evento previsto e coberto pelo seguro, como um acidente, invalidez, doença grave, afastamento do trabalho, entre outros.
                       </legend>
                       <button type="button" class="btn btn-primary" @click="perfil">Conhecer <img src="../assets/arrow.svg" alt=""></button>
                   </div>
