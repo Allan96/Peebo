@@ -9,7 +9,7 @@
 <script>
 import DailyIframe from '@daily-co/daily-js';
 import Cookies from 'js-cookie';
-const callFrame = DailyIframe.createFrame(document.getElementById('teste'));
+const callFrame = DailyIframe.createCallObject();
 export default {
     data() {
         return{
@@ -33,20 +33,21 @@ body{
     margin: 0;
 }
 iframe{
-    width: 100%!important;
-    height: 100vh!important;
+        width: 100%!important;
+    height: calc(100vh + 96px)!important;
     position: relative!important;
     right: auto!important;
     bottom: auto!important;
     margin: 0px!important;
     border: 0px!important;
     display: block!important;
+    top: -30px;
 }
 img{
     position: fixed;
     z-index: 999;
     left: 50px;
-    top: 200px;
+    top: 50px;
 }
 
 </style>

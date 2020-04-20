@@ -1,9 +1,10 @@
 <template>
   <div class="container">
       <div id="step-1" class="row justify-content-center">
+          <div id="live"></div>
           <div class="col-12 col-sm-8 col-md-6 col-lg-4">
               <Navbar class="margin" />
-              <iframe src="https://hackagrid.daily.co/HDKZyN9afz8AeCje8Fe9" frameborder="0"></iframe>
+              <iframe :src="url" frameborder="0" allow="microphone; camera; autoplay"></iframe>
               <div id="perguntas" class="mt-5">
                   <div id="pergunta-1">
                       <p>
@@ -130,8 +131,8 @@
                 url: this.url
             });
             callFrame.updateParticipant('local', {
-                setAudio: false,
-                setVideo: false
+                setAudio: true,
+                setVideo: true
             });
         },
         methods: {
